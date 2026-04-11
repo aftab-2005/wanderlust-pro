@@ -1,0 +1,49 @@
+<% layout("/layouts/boilerplate")%>
+
+		<div class="row mt-3">
+			<div class="col-8 offset-2">
+
+
+				<h3>Edit a List</h3>
+				<form method="Post" action="/listings/<%=list._id%>?_method=PUT" enctype="multipart/form-data">
+					<div>
+						<label for="title" class="form-label">Title</label>
+						<input name="list[title]" value="<%=list.title%>" type="text" class="form-control">
+
+					</div>
+					<div>
+						<label for="description" class="form-label">Description</label>
+						<textarea name="list[description]" class="form-control"><%=list.description%> </textarea>
+					</div>
+                    
+					<div class="mb-3">
+						original Listing image<br/>
+						<img src="<%=originalimage%>"/>
+					</div>
+					<div>
+						<label for="image" class="form-label">Upload Image</label>
+						<input name="list[image]" placeholder="enter image or file" type="file" class="form-control">
+					</div>
+					<div class="row">
+						<div class="mb-3 col-md-4">
+
+							<label for="price" class="form-label">Price</label>
+							<input name="list[price]" value="<%=list.price%>" type="number" class="form-control">
+						</div>
+
+						<div class="mb-3 col-md-8">
+							<label for="country" class="form-label">Country</label>
+							<input name="list[country]" value="<%=list.country%>" type="text" class="form-control">
+						</div>
+					</div>
+
+					<di>
+
+						<label for="location" class="form-label">Location</label>
+						<input name="list[location]" value="<%=list.location%>" type="text" class="form-control">
+					</di>
+
+					<button class="btn btn-dark edit-btn mt-3 edit-btn">Edit</button>
+				</form>
+			</div>
+		</div>

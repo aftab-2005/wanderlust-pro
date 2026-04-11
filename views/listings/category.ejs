@@ -1,0 +1,24 @@
+<% layout("/layouts/boilerplate")%>
+<% layout("/layouts/boilerplate")%>
+
+<div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+  <% for(let cat of category){ %>
+    <div class="col mb-4">
+      <div class="card listing-card">
+        <img src="<%= cat.image.url %>" class="card-img-top" alt="listing image">
+        <div class="card-body">
+          <h5 class="card-title"><%= cat.title %></h5>
+          <p class="card-text"><%= cat.location %>, <%= cat.country %></p>
+          <p class="card-text">
+            <b>&#8377;<%= cat.price.toLocaleString("en-IN") %> / night</b>
+          </p>
+          <a href="/listings/<%= cat._id %>" class="btn btn-dark">View</a>
+        </div>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+<% if(category.length === 0){ %>
+  <h4 class="text-center mt-5">No listings found in this category.</h4>
+<% } %>

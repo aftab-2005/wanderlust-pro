@@ -1,0 +1,69 @@
+<% layout("/layouts/boilerplate")%>
+
+	<div class="row mt-3">
+		<div class="col-8 offset-2">
+			<br><br>
+			<h3>Create a new List</h3>
+			<form method="Post" action="/listings" class="needs-validation" novalidate enctype="multipart/form-data">
+				<div class="mb-3">
+					<label for="title" class="form-label">Title</label>
+					<input name="list[title]" placeholder="Add a catchy title" type="text" class="form-control"
+						required>
+					<div class="valid-feedback">ok good!</div>
+					<div class="invalid-feedback">not good!</div>
+				</div>
+				<div class="mb-3">
+					<label for="description" class="form-label">Description</label>
+					<textarea name="list[description]" placeholder="enter description" class="form-control"
+						required></textarea>
+					<div class="valid-feedback">ok good!</div>
+					<div class="invalid-feedback">not good!</div>
+				</div>
+				<div class="mb-3">
+					<label for="image" class="form-label">Upload Image</label>
+					<input name="list[image]" placeholder="enter image or file" type="file" class="form-control"
+						required>
+
+				</div>
+				<div class="row">
+					<div class="mb-3 col-md-4">
+						<label for="price" class="form-label">Price</label>
+						<input name="list[price]" placeholder="1200" type="number" class="form-control" required>
+						<div class="valid-feedback">ok good!</div>
+						<div class="invalid-feedback">not good!</div>
+					</div>
+					<div class="mb-3 col-md-8">
+						<label for="country" class="form-label">Country</label>
+						<input name="list[country]" placeholder="India" type="text" class="form-control" required>
+						<div class="valid-feedback">ok good!</div>
+						<div class="invalid-feedback">not good!</div>
+					</div>
+				</div>
+				<div class="mb-3">
+					<label for="location" class="form-label">location</label>
+					<input name="list[location]" placeholder="jaipur, Rajasthan" type="text" class="form-control"
+						required>
+					<div class="valid-feedback">ok good!</div>
+					<div class="invalid-feedback">not good!</div>
+				</div>
+
+				<div class="mb-3">
+					<label class="form-label" for="category">Category</label>
+					<select name="list[category]" id="category" class="form-select" required>
+						<option value="" disabled selected>Select a category</option>
+						<option value="Rooms">Rooms</option>
+						<option value="Iconic cities">Iconic cities</option>
+						<option value="Mountains">Mountains</option>
+						<option value="Castles">Castles</option>
+						<option value="Amazing Pools">Amazing Pools</option>
+						<option value="Camping">Camping</option>
+						<option value="Farms">Farms</option>
+						<option value="Arctic">Arctic</option>
+						<option value="Trending">Trending</option>
+					</select>
+				</div>
+				<button class="btn btn-dark sub-btn mt-3">Add</button>
+				<br><br>
+			</form>
+		</div>
+	</div>
