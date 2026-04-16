@@ -1,13 +1,136 @@
-<% if(success && success.length){%>
+<style>
+  .wl-flash-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 520px;
+    margin: 1rem auto 0;
+    padding: 0 1rem;
+  }
+
+  .wl-alert {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 500;
+    animation: wlSlideDown 0.35s ease;
+  }
+
+  @keyframes wlSlideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .wl-alert-left {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .wl-alert-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  /* ── Success ── */
+  .wl-alert.wl-success {
+    background: rgba(29, 158, 117, 0.12);
+    border: 1px solid rgba(29, 158, 117, 0.3);
+    color: #1d9e75;
+  }
+  .wl-alert.wl-success .wl-alert-icon {
+    background: rgba(29, 158, 117, 0.2);
+    color: #1d9e75;
+  }
+
+  /* ── Error ── */
+  .wl-alert.wl-error {
+    background: rgba(254, 66, 77, 0.1);
+    border: 1px solid rgba(254, 66, 77, 0.3);
+    color: #fe424d;
+  }
+  .wl-alert.wl-error .wl-alert-icon {
+    background: rgba(254, 66, 77, 0.15);
+    color: #fe424d;
+  }
+
+  /* ── Close Button ── */
+  .wl-alert-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 0.9rem;
+    color: inherit;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: opacity 0.2s, background 0.2s;
+    flex-shrink: 0;
+  }
+  .wl-alert-close:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 576px) {
+    .wl-flash-container {
+      max-width: 100%;
+      padding: 0 1rem;
+    }
+  }
+</style>
+
+<div class="wl-flash-container">
+
+<% if(typeof success !== 'undefined' && success.length){ %>
+  <div class="wl-alert wl-success" role="alert">
+      <div class="wl-alert-left">
+        <div class="wl-alert-icon">
+          <i class="fa-solid fa-check"></i>
+        </div>
+        <span><%= success %></span>
+      </div>
+      <button class="wl-alert-close" onclick="this.parentElement.remove()">✕</button>
+    </div>
+  <% } %>
+
+<% if(typeof error !== 'undefined' && error.length){ %>
+    <div class="wl-alert wl-error" role="alert">
+      <div class="wl-alert-left">
+        <div class="wl-alert-icon">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+        <span><%= error %></span>
+      </div>
+      <button class="wl-alert-close" onclick="this.parentElement.remove()">✕</button>
+    </div>
+  <% } %>
+
+</div>
+
+<!-- old file -->
+<!-- <%#if(success && success.length){%>
 	<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
-		<%=success%>
+		<%#success%>
 			<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 	</div>
-	<%}%>
+	<%#}%>
 
-		<% if(error && error.length){%>
+		<%#if(error && error.length){%>
 			<div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
-				<%=error%>
+				<%#error%>
 					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 			</div>
-			<%}%>
+			<%#}%> -->

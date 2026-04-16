@@ -24,7 +24,7 @@ const listing_schema = new schema({
   },
   category:{
     type:String,
-    enum:["Trending","Rooms","Iconic cities","Mountains","Castles","Amazing Pools","Camping","Farms","Arctic"],
+    enum:["Trending","Rooms","Iconic cities","Mountains","Castles","Amazing Pools","Camping","Farms","Arctic","Domes","Boats"],
   }
 });
 //post middleware:if any listing delete then all reviews also delete

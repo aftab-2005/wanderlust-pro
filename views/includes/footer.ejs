@@ -1,14 +1,140 @@
+<style>
+  footer {
+    background: #0f0f0f;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.4rem 2rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .f-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .f-info-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .f-info-socials i {
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .f-info-socials i:hover {
+    color: #fe424d;
+    transform: translateY(-3px);
+  }
+
+  .f-info-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.02em;
+  }
+
+  .f-info-brand span {
+    color: #fe424d;
+  }
+
+  .f-info-links {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .f-info-links a {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.78rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+
+  .f-info-links a:hover {
+    color: #fe424d;
+  }
+
+  .f-credit {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.04em;
+  }
+
+  .f-credit a {
+    color: #fe424d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .f-credit a:hover { opacity: 0.75; }
+  .f-credit .heart { color: #fe424d; font-style: normal; }
+
+  /* ── TABLET ── */
+  @media (max-width: 768px) {
+    .f-info {
+      justify-content: center;
+      text-align: center;
+      gap: 0.8rem;
+    }
+    .f-info-socials { justify-content: center; }
+    .f-info-links { justify-content: center; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 576px) {
+    footer {
+      padding: 1.2rem 1rem 0.8rem;
+    }
+    .f-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
 <footer>
-	<div class="f-info">
-		<div class="f-info-socials">
-			<i class="fa-brands fa-square-facebook"></i>
-			<i class="fa-brands fa-square-instagram"></i>
-			<i class="fa-brands fa-square-linkedin"></i>
-		</div>
-		<div class="f-info-brand">&copy; WanderLust Pvt Ltd</div>
-		<div class="f-info-links">
-			<a href="/privacy">privacy</a>
-			<a href="/terms">Terms</a>
-		</div>
-	</div>
+  <div class="f-info">
+    <div class="f-info-socials">
+      <i class="fa-brands fa-square-facebook"></i>
+    <a href="https://www.linkedin.com/in/aftab-ali-4244b6297/"><i class="fa-brands fa-square-linkedin"></i></a>  
+    <a href="https://github.com/repos?q=owner%3A%40me"><i class="fa-brands fa-github"></i></a> 
+    </div>
+    <div class="f-info-brand">&copy; <span>Wander</span>Lust Pvt Ltd</div>
+    <div class="f-info-links">
+      <a href="/privacy">Privacy</a>
+      <a href="/terms">Terms</a>
+    </div>
+  </div>
+  <div class="f-credit">
+    Crafted with <i class="heart"></i> by
+    <a href="https://github.com/aftabali" target="_blank">@aftab</a>
+  </div>
 </footer>
+
+<!-- old file -->
+ <!-- <footer>
+    <div class="f-info">
+        <div class="f-info-socials">
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-linkedin"></i>
+        </div>
+        <div class="f-info-brand">&copy; WanderLust Pvt Ltd</div>
+        <div class="f-info-links">
+            <a href="/privacy">privacy</a>
+            <a href="/terms">Terms</a>
+        </div>
+    </div>
+</footer> -->

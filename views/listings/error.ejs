@@ -1,24 +1,11 @@
 <%layout("/layouts/boilerplate")%>
-	<!-- <div class="row mt-3">
-		<div class="alert alert-danger col-6 offset-3" role="alert"> -->
-<!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"> -->
-<!-- <use xlink:href="#exclamation-triangle-fill" /> -->
-<!-- </svg> -->
-
-<!-- <h3 class="alert-heading">
-				<%#message%>
-			</h3> -->
-<!-- <p><%#err.stack%></p> -->
-<!-- </div>
-	</div> -->
-
-<% if(success && success.length) { %>
+<% if(typeof success !== 'undefined' && success.length){ %>
 	<div class="alert alert-success col-6 offset-3" role="alert">
 		<%=success%>
 	</div>
 	<% } %>
 
-		<% if(error && error.length) { %>
+<% if(typeof error !== 'undefined' && error.length){ %>
 			<div class="alert alert-danger col-6 offset-3" role="alert">
 				<%=error%>
 			</div>

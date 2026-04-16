@@ -1,6 +1,10 @@
+<style>
+  .card-title
+  {
+    color:aliceblue;
+  }
+</style>
 <% layout("/layouts/boilerplate")%>
-<% layout("/layouts/boilerplate")%>
-
 <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
   <% for(let cat of category){ %>
     <div class="col mb-4">
@@ -8,11 +12,11 @@
         <img src="<%= cat.image.url %>" class="card-img-top" alt="listing image">
         <div class="card-body">
           <h5 class="card-title"><%= cat.title %></h5>
-          <p class="card-text"><%= cat.location %>, <%= cat.country %></p>
+          <p class="card-text" ><%= cat.location %>, <%= cat.country %></p>
           <p class="card-text">
             <b>&#8377;<%= cat.price.toLocaleString("en-IN") %> / night</b>
           </p>
-          <a href="/listings/<%= cat._id %>" class="btn btn-dark">View</a>
+          <a href="/listings/<%= cat._id %>" class="btn btn-dark">Detailed View</a>
         </div>
       </div>
     </div>
@@ -20,5 +24,8 @@
 </div>
 
 <% if(category.length === 0){ %>
-  <h4 class="text-center mt-5">No listings found in this category.</h4>
+  <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+  No listings found in this category.</div>
 <% } %>
+
+<a href="/listings" class="btn btn-danger">Go to Home</a>
